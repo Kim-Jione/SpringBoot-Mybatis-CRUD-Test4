@@ -24,8 +24,7 @@ public class UsersService {
 
 	public void 관리자회원가입(AdminJoinDto adminJoinDto) {
 		usersDao.insert(adminJoinDto.toUsers());
-		Users usersPS = usersDao.findByUsername
-		(adminJoinDto.getUsername());
+		Users usersPS = usersDao.findByUsername(adminJoinDto.getUsername());
 		adminDao.insert(adminJoinDto.toAdmin(usersPS.getUsersId()));
 	}
 

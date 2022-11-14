@@ -31,16 +31,15 @@
 
 	<insert id="insert">
 		INSERT INTO users(username, password, role,
-		createdAt)
+		 created_at)
 		VALUES(#{username}, #{password}, #{role}, now())
 	</insert>
 
 
 	<select id="findAll"
 		resultType="site.metacoding.firstapp.domain.users.Users">
-		SELECT * FROM users ORDER BY id DESC
+		SELECT * FROM users 
 	</select>
-
 
 	<update id="update">
 		UPDATE users SET password = #{password}, email =
@@ -48,13 +47,22 @@
 		WHERE id = #{id}
 	</update>
 
-    <sql id="memberLogin">
-          
-    </sql>
-
-
 	<delete id="deleteById">
 		DELETE FROM users WHERE id = #{id}
 	</delete>
+
+	<select id="adminList"
+		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+SELECT u.username, u.role, u.created_at, a.admin_name, a.admin_email
+FROM users u left JOIN admin a ON u.users_id = a.users_id
+WHERE u.role = 'admin'
+	</select>
+
+<select id="membersList"
+		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+SELECT u.username, u.role, u.created_at, m.members_name, m.members_email
+FROM users u left JOIN members m ON u.users_id = m.users_id
+WHERE u.role = 'member'
+	</select>
 
 </mapper>
