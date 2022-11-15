@@ -27,4 +27,13 @@
 		DELETE FROM members WHERE id = #{membersId}
 	</delete>
 
+
+    <update id="updateMembers">
+          Update members 
+		  SET 
+		  members_name=#{membersName},
+		  members_email=#{membersEmail}
+		  WHERE users_id=#{usersId}
+    </update>
+
 </mapper>

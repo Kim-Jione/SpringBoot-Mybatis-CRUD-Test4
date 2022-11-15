@@ -2,6 +2,8 @@ package site.metacoding.firstapp.domain.members;
 
 import java.util.List;
 
+import site.metacoding.firstapp.web.dto.request.UsersListDto;
+
 public interface MembersDao {
 
 	public void insert(Members members);
@@ -13,4 +15,6 @@ public interface MembersDao {
 	public void update(Members members);
 
 	public void delete(Integer membersId);
+
+	public void updateMembers(UsersListDto usersListDto);
 }

@@ -23,7 +23,9 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                     <td>${member.role}</td>
                     <td>${member.createdAt}</td>
                     <th>
-                        <a href="/members/update" class="btn btn-warning"
+                        <a
+                            href="/members/${member.usersId}/update"
+                            class="btn btn-warning"
                             >수정</a
                         >
                     </th>

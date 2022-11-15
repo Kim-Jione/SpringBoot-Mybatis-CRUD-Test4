@@ -74,13 +74,17 @@ FROM users u left JOIN admin a ON u.users_id = a.users_id
 WHERE u.users_id = #{usersId}
 	</select>
 
-	
+<select id="membersFindById"
+		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+SELECT u.username, u.role, u.created_at, m.members_name, m.members_email
+FROM users u left JOIN members m ON u.users_id = m.users_id
+WHERE u.users_id = #{usersId}
+	</select>
 
 	<update id="updateUsers">
           UPDATE users 
 		  SET 
-		  username = #{username}, 
-		  role=#{role}
+		  username = #{username} 
 		  WHERE users_id=#{usersId}
     </update>
 </mapper>

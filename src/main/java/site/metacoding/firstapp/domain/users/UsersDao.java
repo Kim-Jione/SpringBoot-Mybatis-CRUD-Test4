@@ -28,8 +28,8 @@ public interface UsersDao {
 
 	public UsersListDto adminFindById(Integer usersId);
 
-	
-
 	public void updateUsers(UsersListDto usersListDtoPS);
+
+	public UsersListDto membersFindById(Integer usersId);
 
 }
