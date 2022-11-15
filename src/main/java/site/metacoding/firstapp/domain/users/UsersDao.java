@@ -3,7 +3,8 @@ package site.metacoding.firstapp.domain.users;
 import java.util.List;
 
 import site.metacoding.firstapp.web.dto.request.LoginDto;
-import site.metacoding.firstapp.web.dto.request.UsersListDto;
+import site.metacoding.firstapp.web.dto.response.SaveListDto;
+import site.metacoding.firstapp.web.dto.response.UsersListDto;
 
 public interface UsersDao {
 	public Users adminLogin(LoginDto loginDto);
@@ -31,5 +32,7 @@ public interface UsersDao {
 	public void updateUsers(UsersListDto usersListDtoPS);
 
 	public UsersListDto membersFindById(Integer usersId);
+
+	public List<SaveListDto> saveList();
 
 }

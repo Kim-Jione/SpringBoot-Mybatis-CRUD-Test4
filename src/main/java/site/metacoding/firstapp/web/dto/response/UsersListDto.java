@@ -1,4 +1,4 @@
-package site.metacoding.firstapp.web.dto.request;
+package site.metacoding.firstapp.web.dto.response;
 
 import java.sql.Timestamp;
 

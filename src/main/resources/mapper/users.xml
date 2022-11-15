@@ -52,7 +52,7 @@
 	</delete>
 
 	<select id="adminList"
-		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+		resultType="site.metacoding.firstapp.web.dto.response.UsersListDto">
 SELECT u.username, u.role, u.created_at, a.admin_name, a.admin_email, u.users_id
 FROM users u left JOIN admin a ON u.users_id = a.users_id
 WHERE u.role = 'admin'
@@ -65,7 +65,7 @@ WHERE u.role = 'admin'
 
 
 <select id="membersList"
-		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+		resultType="site.metacoding.firstapp.web.dto.response.UsersListDto">
 SELECT u.username, u.role, u.created_at, m.members_name, m.members_email, u.users_id
 FROM users u left JOIN members m ON u.users_id = m.users_id
 WHERE u.role = 'member'
@@ -73,14 +73,14 @@ WHERE u.role = 'member'
 
 
 <select id="adminFindById"
-		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+		resultType="site.metacoding.firstapp.web.dto.response.UsersListDto">
 SELECT u.username, u.role, u.created_at, a.admin_name, a.admin_email
 FROM users u left JOIN admin a ON u.users_id = a.users_id
 WHERE u.users_id = #{usersId}
 	</select>
 
 <select id="membersFindById"
-		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+		resultType="site.metacoding.firstapp.web.dto.response.UsersListDto">
 SELECT u.username, u.role, u.created_at, m.members_name, m.members_email
 FROM users u left JOIN members m ON u.users_id = m.users_id
 WHERE u.users_id = #{usersId}
@@ -92,4 +92,14 @@ WHERE u.users_id = #{usersId}
 		  username = #{username} 
 		  WHERE users_id=#{usersId}
     </update>
+
+
+
+
+
+<select id="saveList"
+		resultType="site.metacoding.firstapp.web.dto.response.SaveListDto">
+SELECT u.username, o.orders_name, o.orders_price, o.orders_count, o.created_at,m.members_name FROM members m LEFT JOIN orders o ON m.users_id = o.users_id LEFT JOIN users u  ON o.users_id = u.users_id
+	</select>
+
 </mapper>

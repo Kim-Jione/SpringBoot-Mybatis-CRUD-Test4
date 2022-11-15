@@ -48,7 +48,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             <a class="nav-link" href="/users/list">유저목록</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/orders/ordersList"
+                            <a class="nav-link" href="/save/list"
                                 >구매목록</a
                             >
                         </li>
