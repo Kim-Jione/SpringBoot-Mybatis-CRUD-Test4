@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                 <th>등급</th>
                 <th>가입일자</th>
                 <th>수정</th>
+                <th>삭제</th>
             </tr>
         </thead>
         <tbody>
@@ -22,13 +23,21 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                     <td>${member.membersEmail }</td>
                     <td>${member.role}</td>
                     <td>${member.createdAt}</td>
-                    <th>
+                    <td>
                         <a
                             href="/members/${member.usersId}/update"
                             class="btn btn-warning"
                             >수정</a
                         >
-                    </th>
+                    </td>
+                    <td>
+                        <form
+                            action="/members/${member.usersId}/delete"
+                            method="post"
+                        >
+                            <button class="btn btn-danger">삭제</button>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>
@@ -43,6 +52,7 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                 <th>등급</th>
                 <th>가입일자</th>
                 <th>수정</th>
+                <th>삭제</th>
             </tr>
         </thead>
         <tbody>
@@ -60,6 +70,7 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                             >수정</a
                         >
                     </td>
+                    <td><a href="" class="btn btn-danger">삭제</a></td>
                 </tr>
             </c:forEach>
         </tbody>
