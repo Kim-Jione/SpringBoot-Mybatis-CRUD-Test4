@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.admin.AdminDao;
 import site.metacoding.firstapp.domain.members.MembersDao;
+import site.metacoding.firstapp.domain.orders.OrdersDao;
 import site.metacoding.firstapp.domain.users.UsersDao;
 import site.metacoding.firstapp.web.dto.response.SaveListDto;
 import site.metacoding.firstapp.web.dto.response.UsersListDto;
@@ -22,6 +23,7 @@ public class UsersController {
 	private final UsersDao usersDao;
 	private final AdminDao adminDao;
 	private final MembersDao membersDao;
+	private final OrdersDao ordersDao;
 
 	// 유저 목록보기
 	@GetMapping("/users/list")
@@ -77,11 +79,18 @@ public class UsersController {
 		return "redirect:/users/list";
 	}
 
-	// 유저 목록보기
+	// 유저 주문목록보기
 	@GetMapping("/save/list")
 	public String saveList(Model model) {
 		List<SaveListDto> saveListDto = usersDao.saveList();
 		model.addAttribute("saveList", saveListDto);
 		return "users/saveListForm";
+	}
+
+	// 유저 주문목록 삭제하기
+	@PostMapping("/saveList/{ordersId}/delete")
+	public String saveListDelete(@PathVariable Integer ordersId) {
+		ordersDao.delete(ordersId);
+		return "redirect:/save/list";
 	}
 }

@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class SaveListDto {
+	private Integer ordersId;
 	private String username;
 	private String membersName;
 	private String ordersName;

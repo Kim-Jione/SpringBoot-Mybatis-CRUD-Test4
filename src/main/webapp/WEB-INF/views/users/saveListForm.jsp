@@ -24,7 +24,16 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                     <td>${saveList.ordersPrice}</td>
                     <td>${saveList.ordersCount}</td>
                     <td>${saveList.createdAt}</td>
-                    <td>삭제</td>
+                    <td>
+                        <form
+                            action="/saveList/${saveList.ordersId}/delete"
+                            method="post"
+                        >
+                            <button type="submit" class="btn btn-danger">
+                                삭제
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>

@@ -23,9 +23,8 @@
 		VALUES(#{ordersName}, #{ordersPrice}, #{ordersCount},#{usersId},#{productId}, now())
 	</insert>
 
-
-	<delete id="deleteById">
-		DELETE FROM orders WHERE id = #{ordersId}
-	</delete>
+    <delete id="delete">
+          DELETE FROM orders WHERE orders_id = #{ordersId}
+    </delete>
 
 </mapper>

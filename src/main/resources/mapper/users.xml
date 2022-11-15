@@ -99,7 +99,7 @@ WHERE u.users_id = #{usersId}
 
 <select id="saveList"
 		resultType="site.metacoding.firstapp.web.dto.response.SaveListDto">
-SELECT u.username, o.orders_name, o.orders_price, o.orders_count, o.created_at,m.members_name FROM members m LEFT JOIN orders o ON m.users_id = o.users_id LEFT JOIN users u  ON o.users_id = u.users_id
+SELECT u.username, o.orders_name, o.orders_price,o.orders_id, o.orders_count, o.created_at,m.members_name FROM members m LEFT JOIN orders o ON m.users_id = o.users_id LEFT JOIN users u  ON o.users_id = u.users_id
 	</select>
 
 </mapper>
