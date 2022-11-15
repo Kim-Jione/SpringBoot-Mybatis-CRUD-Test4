@@ -26,4 +26,10 @@ public interface UsersDao {
 
 	public List<UsersListDto> membersList();
 
+	public UsersListDto adminFindById(Integer usersId);
+
+	
+
+	public void updateUsers(UsersListDto usersListDtoPS);
+
 }

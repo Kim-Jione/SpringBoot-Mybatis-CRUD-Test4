@@ -32,4 +32,12 @@
           
     </update>
 
+	<update id="updateAdmin">
+          Update admin 
+		  SET 
+		  admin_name=#{adminName},
+		  admin_email=#{adminEmail}
+		  WHERE users_id=#{usersId}
+    </update>
+
 </mapper>

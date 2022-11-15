@@ -48,7 +48,7 @@ public class ProductController {
 		model.addAttribute("update", productDao.findById(id));
 		return "product/updateForm";
 	}
-	
+
 	// 수정하기
 	@PostMapping("/product/{id}/edit")
 	public String update(@PathVariable Integer id, Product product) {

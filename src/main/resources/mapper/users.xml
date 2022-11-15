@@ -25,7 +25,7 @@
 
 	<select id="findById"
 		resultType="site.metacoding.firstapp.domain.users.Users">
-		SELECT * FROM users WHERE id = #{userId}
+		SELECT * FROM users WHERE users_id = #{usersId}
 
 	</select>
 
@@ -53,16 +53,34 @@
 
 	<select id="adminList"
 		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
-SELECT u.username, u.role, u.created_at, a.admin_name, a.admin_email
+SELECT u.username, u.role, u.created_at, a.admin_name, a.admin_email, u.users_id
 FROM users u left JOIN admin a ON u.users_id = a.users_id
 WHERE u.role = 'admin'
 	</select>
 
+
 <select id="membersList"
 		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
-SELECT u.username, u.role, u.created_at, m.members_name, m.members_email
+SELECT u.username, u.role, u.created_at, m.members_name, m.members_email, u.users_id
 FROM users u left JOIN members m ON u.users_id = m.users_id
 WHERE u.role = 'member'
 	</select>
 
+
+<select id="adminFindById"
+		resultType="site.metacoding.firstapp.web.dto.request.UsersListDto">
+SELECT u.username, u.role, u.created_at, a.admin_name, a.admin_email
+FROM users u left JOIN admin a ON u.users_id = a.users_id
+WHERE u.users_id = #{usersId}
+	</select>
+
+	
+
+	<update id="updateUsers">
+          UPDATE users 
+		  SET 
+		  username = #{username}, 
+		  role=#{role}
+		  WHERE users_id=#{usersId}
+    </update>
 </mapper>

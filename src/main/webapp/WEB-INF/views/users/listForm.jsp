@@ -2,9 +2,8 @@
 pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
 
 <div class="container">
-    
     <h1>구매자</h1>
-    <table class="table table-striped" >
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>아이디</th>
@@ -23,7 +22,11 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                     <td>${member.membersEmail }</td>
                     <td>${member.role}</td>
                     <td>${member.createdAt}</td>
-                    <td>수정</td>
+                    <th>
+                        <a href="/members/update" class="btn btn-warning"
+                            >수정</a
+                        >
+                    </th>
                 </tr>
             </c:forEach>
         </tbody>
@@ -41,18 +44,20 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
             </tr>
         </thead>
         <tbody>
-            <c:forEach
-                var="admin"
-                items="${admin}"
-              
-            >
+            <c:forEach var="admin" items="${admin}">
                 <tr>
                     <td>${admin.username}</td>
                     <td>${admin.adminName }</td>
                     <td>${admin.adminEmail}</td>
                     <td>${admin.role}</td>
                     <td>${admin.createdAt}</td>
-                    <td>수정</td>
+                    <td>
+                        <a
+                            href="/admin/${admin.usersId}/update"
+                            class="btn btn-warning"
+                            >수정</a
+                        >
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>
