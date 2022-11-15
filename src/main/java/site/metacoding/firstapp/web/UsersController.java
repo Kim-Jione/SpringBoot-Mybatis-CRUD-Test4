@@ -65,6 +65,7 @@ public class UsersController {
 	@PostMapping("/admin/{usersId}/delete")
 	public String adminDelete(@PathVariable Integer usersId) {
 		usersDao.delete(usersId);
+		adminDao.delete(usersId);
 		return "redirect:/users/list";
 	}
 }

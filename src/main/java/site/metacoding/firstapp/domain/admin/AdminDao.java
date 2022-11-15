@@ -14,7 +14,7 @@ public interface AdminDao {
 
 	public void update(Admin admin);
 
-	public void delete(Integer adminId);
+	public void delete(Integer usersId);
 
 	public void updateAdmin(UsersListDto usersListDtoPS);
 }

@@ -23,8 +23,8 @@
 	</insert>
 
 
-	<delete id="deleteById">
-		DELETE FROM admin WHERE id = #{adminId}
+	<delete id="delete">
+		DELETE FROM admin WHERE users_id = #{usersId}
 	</delete>
 
 

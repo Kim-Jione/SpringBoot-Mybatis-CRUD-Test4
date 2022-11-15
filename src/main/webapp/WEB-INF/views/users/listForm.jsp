@@ -70,7 +70,14 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                             >수정</a
                         >
                     </td>
-                    <td><a href="" class="btn btn-danger">삭제</a></td>
+                    <td>
+                        <form
+                            action="/admin/${admin.usersId}/delete"
+                            method="post"
+                        >
+                            <button class="btn btn-danger">삭제</button>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>
