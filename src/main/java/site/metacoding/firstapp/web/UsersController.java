@@ -57,6 +57,14 @@ public class UsersController {
 	@PostMapping("/members/{usersId}/delete")
 	public String membersDelete(@PathVariable Integer usersId) {
 		usersDao.delete(usersId);
+		membersDao.delete(usersId);
+		return "redirect:/users/list";
+	}
+
+	// 삭제하기
+	@PostMapping("/admin/{usersId}/delete")
+	public String adminDelete(@PathVariable Integer usersId) {
+		usersDao.delete(usersId);
 		return "redirect:/users/list";
 	}
 }

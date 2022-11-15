@@ -14,7 +14,7 @@ public interface MembersDao {
 
 	public void update(Members members);
 
-	public void delete(Integer membersId);
+	public void delete(Integer usersId);
 
 	public void updateMembers(UsersListDto usersListDto);
 }
