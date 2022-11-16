@@ -14,11 +14,14 @@ public class Orders {
 	private String ordersName;
 	private Integer ordersPrice;
 	private Integer ordersCount; // 주문수량
+	private String ordersMember;
 	private Integer productId;
 	private Integer usersId;
 	private Timestamp createdAt;
 
-	public Orders(String ordersName, Integer ordersPrice, Integer ordersCount, Integer productId, Integer usersId) {
+	public Orders(String ordersMember, String ordersName, Integer ordersPrice, Integer ordersCount, Integer productId,
+			Integer usersId) {
+		this.ordersMember = ordersMember;
 		this.ordersName = ordersName;
 		this.ordersPrice = ordersPrice;
 		this.ordersCount = ordersCount;

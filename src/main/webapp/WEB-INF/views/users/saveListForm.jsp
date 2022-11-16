@@ -12,27 +12,30 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
                 <th>주문가격</th>
                 <th>주문수량</th>
                 <th>주문날짜</th>
-                <th>삭제</th>
+                <th>주문취소</th>
             </tr>
         </thead>
         <tbody>
             <c:forEach var="saveList" items="${saveList}">
                 <tr>
                     <td>${saveList.username}</td>
-                    <td>${saveList.membersName}</td>
-                    <td>${saveList.ordersName }</td>
+                    <td>${saveList.ordersMember}</td>
+                    <td>${saveList.ordersName }</td> 
                     <td>${saveList.ordersPrice}</td>
                     <td>${saveList.ordersCount}</td>
                     <td>${saveList.createdAt}</td>
                     <td>
-                        <form
-                            action="/saveList/${saveList.ordersId}/delete"
+                         <form
+                            action="/membersList/${saveList .ordersId}/delete"
                             method="post"
                         >
+                        <input type="hidden" name="ordersCount" value="${saveList.ordersCount}">
+                        
+                      <input type="hidden" name="productId" value="${saveList.productId}">
                             <button type="submit" class="btn btn-danger">
-                                삭제
+                                주문취소
                             </button>
-                        </form>
+                        </form> 
                     </td>
                 </tr>
             </c:forEach>

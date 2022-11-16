@@ -3,6 +3,7 @@ package site.metacoding.firstapp.domain.product;
 import java.util.List;
 
 import site.metacoding.firstapp.web.dto.request.OrdersProductDto;
+import site.metacoding.firstapp.web.dto.request.SaveListDto;
 
 public interface ProductDao {
 	public Product findById(Integer productId);
@@ -18,4 +19,7 @@ public interface ProductDao {
 	public void deleteById(Integer productId);
 
 	public void productQtyUpdate(OrdersProductDto ordersProductDto);
+
+	public void ordersQtyUpdate(OrdersProductDto ordersProductDto);
+
 }

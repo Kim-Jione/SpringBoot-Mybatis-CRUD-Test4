@@ -9,8 +9,9 @@ import lombok.Setter;
 @Getter
 public class SaveListDto {
 	private Integer ordersId;
+	private Integer productId;
 	private String username;
-	private String membersName;
+	private String ordersMember;
 	private String ordersName;
 	private Integer ordersPrice;
 	private Integer ordersCount;

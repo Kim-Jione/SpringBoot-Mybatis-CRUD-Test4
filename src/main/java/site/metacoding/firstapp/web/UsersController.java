@@ -12,7 +12,9 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.admin.AdminDao;
 import site.metacoding.firstapp.domain.members.MembersDao;
 import site.metacoding.firstapp.domain.orders.OrdersDao;
+import site.metacoding.firstapp.domain.product.ProductDao;
 import site.metacoding.firstapp.domain.users.UsersDao;
+import site.metacoding.firstapp.web.dto.request.OrdersProductDto;
 import site.metacoding.firstapp.web.dto.response.SaveListDto;
 import site.metacoding.firstapp.web.dto.response.UsersListDto;
 
@@ -22,6 +24,7 @@ public class UsersController {
 
 	private final UsersDao usersDao;
 	private final AdminDao adminDao;
+	private final ProductDao productDao;
 	private final MembersDao membersDao;
 	private final OrdersDao ordersDao;
 
@@ -63,22 +66,6 @@ public class UsersController {
 		return "redirect:/users/list";
 	}
 
-	// 삭제하기
-	@PostMapping("/members/{usersId}/delete")
-	public String membersDelete(@PathVariable Integer usersId) {
-		usersDao.delete(usersId);
-		membersDao.delete(usersId);
-		return "redirect:/users/list";
-	}
-
-	// 삭제하기
-	@PostMapping("/admin/{usersId}/delete")
-	public String adminDelete(@PathVariable Integer usersId) {
-		usersDao.delete(usersId);
-		adminDao.delete(usersId);
-		return "redirect:/users/list";
-	}
-
 	// 유저 주문목록보기
 	@GetMapping("/save/list")
 	public String saveList(Model model) {
@@ -87,9 +74,10 @@ public class UsersController {
 		return "users/saveListForm";
 	}
 
-	// 유저 주문목록 삭제하기
-	@PostMapping("/saveList/{ordersId}/delete")
-	public String saveListDelete(@PathVariable Integer ordersId) {
+	// 유저주문 삭제하기
+	@PostMapping("/membersList/{ordersId}/delete")
+	public String saveListDelete(@PathVariable Integer ordersId, OrdersProductDto ordersProductDto) {
+		productDao.ordersQtyUpdate(ordersProductDto);
 		ordersDao.delete(ordersId);
 		return "redirect:/save/list";
 	}

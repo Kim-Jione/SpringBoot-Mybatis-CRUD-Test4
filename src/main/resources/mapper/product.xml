@@ -26,6 +26,13 @@
 		where product_id = #{productId}
     </update>
 
+	<update id="ordersQtyUpdate">
+        Update product
+		SET product_qty = product_qty+#{ordersCount}
+		where product_id = #{productId}
+    </update>
+
+
 	<insert id="insert">
 		INSERT INTO product(product_name, product_price, product_qty, created_at)
 		VALUES(#{productName}, #{productPrice}, #{productQty}, NOW())
@@ -36,6 +43,9 @@
 		product_name = #{productName},
 		product_price = #{productPrice},
 		product_qty = #{productQty}
+
+
+
 		WHERE product_id = #{productId}
 	</update>
 
