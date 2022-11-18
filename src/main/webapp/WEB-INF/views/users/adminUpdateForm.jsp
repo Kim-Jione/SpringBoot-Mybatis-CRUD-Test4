@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
 <div class="container">
-    <h1>관리자 수정페이지</h1>
+    <h1>판매자 수정페이지</h1>
     <form action="/admin/${usersId}/update" method="post">
         <div class="mb-3 mt-3">
             아이디 :

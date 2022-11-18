@@ -2,29 +2,18 @@
 
 ### 1. View 생성
 
--   로그인 페이지
--   회원가입 페이지
 -   상품목록 페이지
+-   상품등록 페이지
 -   상품 상세보기 페이지
--   구매목록 페이지
+-   유저목록 관리 페이지
+-   구매목록 관리 페이지
+-   구매자, 관리자 수정 페이지
 
 ### 2. 기능 (ajax 필요 없음) (서비스 만들 필요 없음)
 
-서버1 (판매자 서버) - DB 를 공유
-서버2 (구매자 서버)
-(구매 테이블 필요)
-(유저 테이블 필요) - 구매자
-
--   회원가입
--   로그인
--   상품목록 보기 (기존과 동일)
--   상품상세 보기 (기존과 다름 : 구매하기 버튼)
--   구매 후 상품 재고 수정
--   구매목록 보기
+-   로그인 없이 유저와 구매목록 관리하기
 
 ## 3. 고급 기능
-
--   상품 등록시 동일한 상품명 못들어가게 하기
 
 ### 4. 테이블 생성
 
@@ -109,29 +98,25 @@ INSERT INTO orders(orders_name, orders_price, orders_count,  product_id, users_i
 
 ### 6. 페이지
 
-회원가입 페이지
-
-<img src=""  width="1000"/>
-
-로그인 페이지
-<img src=""  width="1000"/>
-
 상품목록 페이지
+<img src="https://user-images.githubusercontent.com/106166409/202647522-cb16e4d1-4f5f-4331-9322-b42e06371d83.png"  width="1000"/>
 
-<img src=""  width="1000"/>
+상품등록 페이지
+<img src="https://user-images.githubusercontent.com/106166409/202647566-7c139090-4436-42fe-a57d-be262b08d1cd.png"  width="1000"/>
 
 상품 상세보기 페이지
+<img src="https://user-images.githubusercontent.com/106166409/202647684-a97914db-c4ca-41fe-9965-2a6737fdb715.png"  width="1000"/>
 
-<img src=""  width="1000"/>
+유저목록 관리 페이지
+<img src="https://user-images.githubusercontent.com/106166409/202648369-d2cddd3f-da4c-4fb4-9c81-1aebde2cfe58.png"  width="1000"/>
 
-구매목록 페이지
+구매목록 관리 페이지
+<img src="https://user-images.githubusercontent.com/106166409/202647841-5b62164f-de89-43ea-a757-ceb814f05fa3.png"  width="1000"/>
 
-<img src=""  width="1000"/>
+판매자 수정 페이지
+<img src="https://user-images.githubusercontent.com/106166409/202648279-befa7c54-39cb-4f35-95db-7416ab7dd842.png"  width="1000"/>
+
+구매자 수정 페이지
+<img src="https://user-images.githubusercontent.com/106166409/202648039-d2b76529-a4eb-4410-8aef-1e9e19b77bfe.png"  width="1000"/>
 
 ### 7. 구현기능
-
-<img src=""  width="1000"/>
-
-<img src=""  width="1000"/>
-
-<img src=""  width="1000"/>

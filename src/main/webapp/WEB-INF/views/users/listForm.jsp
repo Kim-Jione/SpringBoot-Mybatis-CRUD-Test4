@@ -42,7 +42,7 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
             </c:forEach>
         </tbody>
     </table>
-    <h1>관리자</h1>
+    <h1>판매자</h1>
     <table class="table table-striped">
         <thead>
             <tr>

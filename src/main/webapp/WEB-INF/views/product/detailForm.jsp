@@ -27,10 +27,7 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
         </div>
 
         <input type="hidden" value="${detail.productId}" />
-        <select name="ordersCount">
-            <c:forEach begin="1" end="10" var="i">
-                <option value="${i}">${i}</option>
-            </c:forEach></select>&nbsp;개
+        
                         </form>
             <span><a href="/product/${detail.productId}/edit" class="btn         btn-warning">수정하러가기</a></span>
            </form> 
